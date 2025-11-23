@@ -1,17 +1,22 @@
 import os
 from dotenv import load_dotenv
 
+# Cargar variables de entorno desde archivo .env
 load_dotenv()
 
-
+# Configuración principal de la aplicación Flask
 class Config:
+	# Clave secreta para seguridad de sesiones y tokens
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'clave-super-secreta'
 
-    # Conexión PostgreSQL
+    # Conexión PostgreSQL - Configuración de BDS
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://postgres:samipro@40.233.21.255:5432/autopartes'
-
+	
+# Desactivar seguimiento de modificaciones para mejor performance
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_ENGINE_OPTIONS = {
+
+# Configuracion optimizada para conexiones de BDS
+	SQLALCHEMY_ENGINE_OPTIONS = {
         'pool_recycle': 300,
         'pool_pre_ping': True,
         'connect_args': {
@@ -23,5 +28,6 @@ class Config:
         }
     }
 
-    DEBUG = os.environ.get('FLASK_DEBUG', True)
-    PORT = int(os.environ.get('PORT', 5000))
+# Configuración de entorno y puerto
+    DEBUG = os.environ.get('FLASK_DEBUG', True) # Modo desarrollo/producción
+    PORT = int(os.environ.get('PORT', 5000)) # Puerto por defecto: 5000
