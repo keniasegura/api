@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+#Hola de nuevo, soy Gretell
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'clave-super-secreta'
