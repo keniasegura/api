@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 # Cargar variables de entorno desde archivo .env
 load_dotenv()
 
-# Configuración principal de la aplicación Flask
+ main
 class Config:
 	# Clave secreta para seguridad de sesiones y tokens
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'clave-super-secreta'
