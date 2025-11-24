@@ -1,4 +1,6 @@
 import psycopg2
+
+#Hola, este es otro de mis cambios en el proyecto - Gretell
 def add_estado_column():
     try:
         conn = psycopg2.connect(
