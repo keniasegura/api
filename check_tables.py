@@ -39,4 +39,4 @@ def check_tables():
 
 
 if __name__ == "__main__":
-    check_tables()
+    check_tables()# Este es un codigo para que, al ejecutarlo, nos diga los datos de las tablas que usa esta API en la base de datos
